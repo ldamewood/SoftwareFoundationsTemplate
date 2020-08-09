@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/alpine
+{
+  "name": "Coq",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    // https://code.visualstudio.com/docs/remote/containers-advanced#_persist-bash-history-between-runs
+    "source=software_foundations-bashhistory,target=/commandhistory,type=volume",
+    // https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
+    "source=software_foundations-vscode-extensions,target=/root/.vscode-server/extensions,type=volume"
+  ],
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "remote.containers.workspaceMountConsistency": "delegated",
+    "editor.rulers": [
+      100
+    ],
+    "editor.formatOnSave": true,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "coqtop.binPath": "/home/coq/.opam/4.05.0/bin"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  // Note that some extensions may not work in Alpine Linux. See https://aka.ms/vscode-remote/linux.
+  "extensions": [
+    "maximedenes.vscoq",
+    "aaron-bond.better-comments",
+    "coenraads.bracket-pair-colorizer",
+    "davidanson.vscode-markdownlint",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "github.vscode-pull-request-github",
+    "ms-vsliveshare.vsliveshare",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker",
+    "tht13.html-preview-vscode",
+    "tyriar.sort-lines",
+    "vscode-icons-team.vscode-icons",
+    "vscodevim.vim"
+  ],
+  "remoteUser": "coq",
+  "containerUser": "coq"
+}

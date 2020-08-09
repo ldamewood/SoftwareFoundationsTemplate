@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "Volume 1: Logical Foundations",
+			"path": "lf"
+		},
+		{
+			"name": "Volume 2: Programming Language Foundations",
+			"path": "plf"
+		},
+		{
+			"name": "Volume 3: Verified Functional Algorithms",
+			"path": "vfa"
+		},
+		{
+			"name": "Volume 4: QuickChick: Property-Based Testing in Coq",
+			"path": "qc"
+		},
+	],
+	"settings": {}
+}
